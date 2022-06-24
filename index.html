@@ -2,6 +2,7 @@
 
 <html lang = "pt-BR">
     <head>
+        <title>Netfluxo</title>
 
         <style>
 
@@ -12,22 +13,19 @@
                 background-color: black;
                 display: flex;
                 justify-content: center;
-                font-family: Arial, Helvetica, sans-serif
+                font-family: Arial, Helvetica, sans-serif;
             }
 
             #principal {
 
                 height: 850px;
                 width: 630px;
-                background-color: black;
-                display: flex;
-                flex-direction: column
-                
-                
+                background-image:linear-gradient(#004092, #020202, transparent); 
+   
             }
 
             p{
-                font-size: small;
+                font-size: smaller;
             }
 
             /* Container principal onde delimita os espaços das divs */
@@ -40,54 +38,66 @@
                 width: 100%;
                 background-image: url('Assets/FluxoEMPI.jpg');
                 display: flex;
-                flex-direction: column-reverse;
+                flex-direction: column;
+                flex-wrap: wrap;
                 align-items: flex-start;
                 align-content: space-between;
+                
             }
                 
                 
 
-                
-             
 
             .logo_fluxo {
-                order: 1;
+                
                 margin-left: 20px;
-                margin-bottom: 40px;
+                margin-top: 160px;
+                order:2;
+
              }
 
 
 
             .b1lower{
+
                 display: flex;
-                flex-direction: row;
-                align-items: flex-start;
+                flex-direction:row;
+                justify-content: center;
+                align-items: center;
                 margin-left: 20px;
-                margin-bottom: px;
-
-             }
-
-            .botao_mute{
-                margin-left: 90%;
-
-             }
-
-            .botao_sair{
-
-                margin-left: 90%
+                order:3;
+                gap: 10px;
+                
                 
 
+             }
+
+            .play{
+
+                background-color: white;
+                width: 80px;
+                height: 30px;
+                color: black;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 2px 2px black;
+                font-size: 10px;
+                
             }
 
 
             /* Divisoria de cima*/
 
             /* Divisoria de baixo*/
+
             .b2{
 
                 height: 20%;
                 width: 100%;
                 background-image:linear-gradient( to top, rgba(51, 50, 50, 0.89),rgb(7, 2, 2) );
+                opacity: 0.8;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -99,32 +109,43 @@
 
 
             .b2left{
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
 
             }
 
             .upper{
 
+                margin-left: 20px;
+
             }
 
             .hd{
+
                 height: 10px;
                 width: 10px;
                 outline: 2px white;
-                background-color: lightgray;
-                box-shadow: 1px 1px gray;
+                background-color: black;
                 opacity: 0.6;
             }
 
             .lower{
 
+                margin-left: 20px;
+                
 
             }
 
 
             .b2right{
+
                 display: flex;
                 flex-direction: column;
                 align-items:flex-start;
+                margin-right:20px;
+
             }
 
             .enfase1{
@@ -150,18 +171,40 @@
 
             .l_fluxo{
 
-                height: 100px;
-                width: 100px;
-                background-color: white;
+                height: 120px;
+                width: 180px;
                 
+                   
             }
 
             .botao{
-                height: 30px;
-                width: 30px;
-                background-color:grey;
-                outline: white;
-                opacity: 0.6;
+
+                height: 20px;
+                width: 20px;
+                border-radius: 60%;
+                background-color:black;
+                
+                
+                
+            }
+
+            .botao_mute{
+                
+                margin-left:405px;
+
+             }
+
+            .botao_sair{
+
+                order: 1;
+                margin-left: 580px;
+                margin-top: 10px;
+
+            }
+
+            .botao_entrar{
+                
+                align:left;
             }
 
             /* Edicao das imagens*/
@@ -178,12 +221,6 @@
             
             <div class="box b1">
 
-                <div class="box botao_mute">
-
-                    <img class = "botao" src="Assets/mute.svg"/>
-
-                </div>
-
                 <div class = "box botao_sair">
 
                     <img class = "botao" src="Assets/x.svg"/>
@@ -191,23 +228,30 @@
                 </div>
             
                 <div class="box logo_fluxo">
-                    <img class = "l_fluxo" scr="Assets/LogoFluxo.png"/>  
+
+                    <img class = "l_fluxo" src="./Assets/LogoFluxo.png"/> 
+
                 </div>
 
                 <div class="box b1lower">
+       
+                            <div class="play">
+                            
+                                <div>
+                                    ENTRAR
+                                </div>
+                                <div>
+                                    <img src="Assets/play.svg" class="botao_entrar"/>
+                                </div>
 
-                    
-                    <div class="box settings">
-                         
-                            <img class="botao" src="Assets/play.svg"/>
+                            </div>
                         
-                            <img class="botao" src="Assets/plus.svg"/>
+                            <div> <img class="botao" src="Assets/plus.svg"/> </div>
                         
-                            <img class="botao" src="Assets/like.svg"/>
-                        
+                            <div> <img class="botao" src="Assets/like.svg"/> </div>
 
-                    </div>
-                    
+                            <div> <img class = "botao botao_mute" src="Assets/mute.svg"/> </div>
+  
 
                 </div>
                 
@@ -223,7 +267,7 @@
 
                     <p> 
 
-                        <b class="relevante" style="color:green">
+                        <b class="relevante" style="color:rgb(64, 187, 64)">
                          100% relevante 
                         </b>
 
@@ -241,15 +285,17 @@
 
                     <div class="box lower">
 
+
                     <p> 
 
-                        <img class= "top1" scr="Assets/top1.png"/>
+                        <img class= "top1" src="Assets/top1.png"/>
                         Top 1 empresa junior do Brasil
 
                     </p>
 
                         <p> 
-                            Teste
+                            O período Trainee está sendo muito desafiador. São muitos conteúdos novos para absorver <br>
+                            em pouco tempo, mas o desafio está permitindo aprender a lidar com situações de pressão.
                         </p>
                     
                     </div>
@@ -263,7 +309,7 @@
                         <b class="enfase1" style="color:darkgrey ">
                         Elenco:
                         </b> 
-                        Antônio Falcão, Victor Diniz, <br>
+                        Antônio Falcão, Victor Diniz,
                         Karoline Oliveira, e mais
                     </p>
 
@@ -271,8 +317,8 @@
                         <b class="enfase1" style="color:darkgrey " > 
                         Gênero:
                         </b>
-                        Engenharias, Quimica Industrial,<br> 
-                        Arquitetura e Urbanismo,<br>
+                        Engenharias, Quimica Industrial, 
+                        Arquitetura e Urbanismo,
                          e Comunicação Visual
                     </p>
 
